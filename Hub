@@ -1,0 +1,10 @@
+local function Load(url) loadstring(game:HttpGet(url, true))() end
+local Place_ID = game.PlaceId
+
+if Place_ID == 5130598377 then
+    Load("https://raw.githubusercontent.com/BimbusCoder/Roblox-Scripts/master/AUT")
+elseif Place_ID == 5233268561 then
+    Load("https://raw.githubusercontent.com/BimbusCoder/Roblox-Scripts/master/ABJ")
+else
+    Load("https://raw.githubusercontent.com/BimbusCoder/Roblox-Scripts/master/BingusEsp")
+end
