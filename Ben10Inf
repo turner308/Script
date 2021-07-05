@@ -52,7 +52,9 @@ RunService.RenderStepped:Connect(function()
         if GrabEnemy() ~= nil and Exists() then
             local Enemy = GrabEnemy()
 
-            LocalPlayer.Character.HumanoidRootPart.CFrame = Enemy.HumanoidRootPart.CFrame * CFrame.new(0, 0, 3)
+            Enemy.HumanoidRootPart.Anchored = true
+
+            LocalPlayer.Character.HumanoidRootPart.CFrame = Enemy.HumanoidRootPart.CFrame * CFrame.new(0, -4.3, 0) * CFrame.Angles(math.pi/2, 0, 0)
             VIM:SendKeyEvent(true, 'F', false, z)
         end
     end
