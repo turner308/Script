@@ -48,15 +48,13 @@ Library:Init()
 
 --//
 RunService.RenderStepped:Connect(function()
-    if Flags.AutoFarm then
-        if GrabEnemy() ~= nil and Exists() then
-            local Enemy = GrabEnemy()
+    if Flags.AutoFarm and GrabEnemy() ~= nil and Exists() then
+        local Enemy = GrabEnemy()
 
-            Enemy.HumanoidRootPart.Anchored = true
+        Enemy.HumanoidRootPart.Anchored = true
 
-            LocalPlayer.Character.HumanoidRootPart.CFrame = Enemy.HumanoidRootPart.CFrame * CFrame.new(0, -4.3, 0) * CFrame.Angles(math.pi/2, 0, 0)
-            VIM:SendKeyEvent(true, 'F', false, z)
-        end
+        LocalPlayer.Character.HumanoidRootPart.CFrame = Enemy.HumanoidRootPart.CFrame * CFrame.new(0, -4.3, 0) * CFrame.Angles(math.pi/2, 0, 0)
+        VIM:SendKeyEvent(true, 'F', false, z)
     end
 end)
 
