@@ -1,6 +1,8 @@
 local Library = {Changed = {}, Returns = {}, Arguments = {}}
 
 local niltable = function(tbl)
+    if tbl == nil then return false end
+
     for _, v in next, tbl do
         if v ~= nil then
             return true
