@@ -2,7 +2,7 @@ local Library = {Changed = {}, Returns = {}, Arguments = {}}
 
 local niltable = function(tbl)
     if type(tbl) ~= 'table' then return false end
-
+    
     for _, v in next, tbl do
         if v ~= nil then
             return true
@@ -17,7 +17,7 @@ Namecall = hookmetamethod(game, '__namecall', function(self, ...)
     local args, method = {...}, getnamecallmethod()
 
     if method == 'FireServer' or method == 'InvokeServer' then
-        local Find = table.find(Library.Stopped, tostring(self))
+        local Find = table.find(Library.Changed, tostring(self))
         local new_args = Library.Arguments[Find]
 
         if Find then
