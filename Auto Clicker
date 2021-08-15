@@ -21,9 +21,7 @@ local flags = {Auto_Clicking = false, Mouse_Locked = false}
 --Mouse-- 
 local Mouse = setmetatable({}, {
     __index = function(table, index)
-        local Mouse = UIS:GetMouseLocation()
-
-        return index:lower() == "x" and Mouse.X or index:lower() == "y" and Mouse.Y
+        return UIS:GetMouseLocation()[index]
     end
 })
 --Get Keybind--
