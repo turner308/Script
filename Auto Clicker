@@ -1,9 +1,10 @@
---[[ Put over loadstring.
+--[[
 getgenv().Settings = {
     ["Auto Click Keybind"] = "V",
     ["Lock Mouse Position Keybind"] = "B",
     ["Right Click"] = false
 }
+loadstring(game:HttpGet("https://raw.githubusercontent.com/BimbusCoder/Script/main/Auto%20Clicker"))()
 ]]
 
 --Already Running--
