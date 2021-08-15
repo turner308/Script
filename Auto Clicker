@@ -8,7 +8,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/BimbusCoder/Script/ma
 ]]
 
 --Already Running--
-if getgenv()["Already Running"] ~= nil then return else getgenv()["Already Running"] = "" end
+if getgenv()["Already Running"] then return else getgenv()["Already Running"] = "" end
 --Services--
 local UIS = game:GetService("UserInputService")
 local VIM = game:GetService("VirtualInputManager")
