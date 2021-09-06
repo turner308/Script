@@ -55,7 +55,7 @@ UIS.InputBegan:Connect(function(inputObj, GPE)
 end)
 --Auto Click--
 coroutine.wrap(function()
-    while true do
+    while (true) do
         Text.Visible = Settings.GUI
         Text.Position = Vector2.new(Camera.ViewportSize.X - 133, Camera.ViewportSize.Y - 48)
 
