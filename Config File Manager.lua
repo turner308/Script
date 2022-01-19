@@ -33,7 +33,7 @@ function library:config(args) --[folder,config_table,config_name]
         end
         return decoded
     end
-    config_library:save()
+    --config_library:save() TESTING
     return config_library
 end
 return library
