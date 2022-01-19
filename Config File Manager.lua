@@ -1,7 +1,7 @@
 local http = game:GetService('HttpService')
 local s_find = string.find
 local library = {}
-function create_folder(folder_name)
+local function create_folder(folder_name)
     if not isfolder(folder_name) then
         makefolder(folder_name)
     end
