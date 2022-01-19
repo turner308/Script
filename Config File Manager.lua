@@ -36,3 +36,4 @@ function library:config(args) --[folder,config_table,config_name]
     config_library:save()
     return config_library
 end
+return library
