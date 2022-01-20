@@ -10,16 +10,17 @@ end
 function library:config(args) --[folder,config_table,config_name]
     args.config_name = s_find(args.config_name, '.') == 1 and args.config_name .. '.txt' or args.config_name
     args.config_table = args.config_table or {}
+    local encoded_settings = http:JSONEncode(args.config_table)
     local folder = args.folder and create_folder(args.folder) or false
     local file_path = args.config_name
     if folder then
         file_path = args.folder .. '\\' .. file_path
         if not isfile(file_path) then
-            writefile(file_path, '')
+            writefile(file_path, encoded_settings)
         end
     else
         if not isfile(args.config_name) then 
-            writefile(args.config_name, '')
+            writefile(args.config_name, encoded_settings)
         end
     end
     local config_library = {}
