@@ -18,7 +18,7 @@ function library:config(args) --[folder,config_table,config_name]
     local folder = args.folder and create_folder(args.folder) or false
     local file_path = args.config_name
     local encoded_settings = http:JSONEncode(args.config_table)
-    create_file(folder and folder .. '\\' .. file_path or args.config_name, encoded_settings)
+    create_file(folder and folder .. '\\' .. file_path or file_path, encoded_settings)
     local config_library = {}
     function config_library:save()
         writefile(file_path, http:JSONEncode(args.config_table))
