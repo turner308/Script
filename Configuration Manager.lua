@@ -1,5 +1,5 @@
 local http = game:GetService('HttpService')
-local s_find = string.find
+local string_find = string.find
 local library = {}
 local function create_folder(folder_name)
     if not isfolder(folder_name) then
@@ -13,7 +13,7 @@ local function create_file(file_path, contents)
     end
 end
 function library:config(args) --[folder,config_table,config_name]
-    args.config_name = s_find(args.config_name, '.') == 1 and args.config_name .. '.txt' or args.config_name
+    args.config_name = string_find(args.config_name, '.') == 1 and args.config_name .. '.txt' or args.config_name
     args.config_table = args.config_table or {}
     local folder = args.folder and create_folder(args.folder) or false
     local file_path = folder and folder .. '\\' .. args.config_name or args.config_name
