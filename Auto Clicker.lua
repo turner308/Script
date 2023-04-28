@@ -9,6 +9,7 @@ local RunService = game:GetService("RunService")
 local LocalPlayer = Players.LocalPlayer
 local Camera = workspace.CurrentCamera
 local flags = {Auto_Clicking = false, Mouse_Locked = false}
+local TaskWait = task.wait
 --Get Keybind--
 local getKeycode = function(bind)
     return (pcall(function() return Enum.KeyCode[bind] end) and Enum.KeyCode[bind] or bind)
@@ -67,6 +68,6 @@ while (true) do
 	if (Settings.Delay <= 0) then
 		RunService.RenderStepped:Wait()
 	else
-		wait(Settings.Delay)
+		TaskWait(Settings.Delay)
 	end
 end
